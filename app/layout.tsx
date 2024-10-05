@@ -23,7 +23,7 @@ export default function RootLayout({ children }: Props) {
           <div className='h-screen hidden md:block w-[300px]'>
             <Sidebar />
           </div>
-          <div className='p-5 w-full mx-auto max-w-7xl'>{children}</div>
+          <div className='p-5 w-full'>{children}</div>
         </div>
       </body>
     </html>
