@@ -1,5 +1,6 @@
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { Inter } from 'next/font/google';
 
 export const metadata = {
@@ -18,7 +19,12 @@ export default function RootLayout({ children }: Props) {
     <html lang='en'>
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <div className='flex'>
+          <div className='h-screen hidden md:block w-[300px]'>
+            <Sidebar />
+          </div>
+          <div className='p-5 w-full mx-auto max-w-7xl'>{children}</div>
+        </div>
       </body>
     </html>
   );
