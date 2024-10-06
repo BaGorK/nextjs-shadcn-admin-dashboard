@@ -1,3 +1,4 @@
+import Analytics from '@/components/dashboard/Analytics';
 import DashboardCard from '@/components/dashboard/DashboardCard';
 import PostsTable from '@/components/posts/PostsTable';
 import { Folder, MessageCircle, Newspaper, User } from 'lucide-react';
@@ -27,6 +28,7 @@ function page() {
           count={1200}
         />
       </div>
+      <Analytics />
       <PostsTable title='Latest Posts' limit={5} />
     </>
   );
