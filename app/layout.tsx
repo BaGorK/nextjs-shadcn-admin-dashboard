@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { Inter } from 'next/font/google';
 
 export const metadata = {
@@ -18,13 +19,21 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Navbar />
-        <div className='flex'>
-          <div className='h-screen hidden md:block w-[300px]'>
-            <Sidebar />
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem={false}
+          disableTransitionOnChange
+          storageKey='next-dashboard-theme'
+        >
+          <Navbar />
+          <div className='flex'>
+            <div className='h-screen hidden md:block w-[300px]'>
+              <Sidebar />
+            </div>
+            <div className='p-5 w-full'>{children}</div>
           </div>
-          <div className='p-5 w-full'>{children}</div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

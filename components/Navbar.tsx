@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import ThemeToggler from './ThemeToggler';
 
 function Navbar() {
   return (
@@ -18,32 +19,36 @@ function Navbar() {
         ED
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className='focus:outline-none'>
-          <Avatar>
-            <AvatarImage src={avatar.src} alt='avatar' />
-            <AvatarFallback className='text-black text-2xl'>E</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>
-            <Link href='/'>My Account</Link>
-          </DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href='/'>Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href='/'>Settings</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href='/'>Subscription</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href='/'>Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className='flex items-center'>
+        <ThemeToggler />
+
+        <DropdownMenu>
+          <DropdownMenuTrigger className='focus:outline-none'>
+            <Avatar>
+              <AvatarImage src={avatar.src} alt='avatar' />
+              <AvatarFallback className='text-black text-2xl'>E</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>
+              <Link href='/'>My Account</Link>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href='/'>Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href='/'>Settings</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href='/'>Subscription</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href='/'>Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 }
