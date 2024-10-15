@@ -2,6 +2,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
 
 export const metadata = {
@@ -34,6 +35,8 @@ export default function RootLayout({ children }: Props) {
             <div className='p-5 w-full'>{children}</div>
           </div>
         </ThemeProvider>
+
+        <Toaster />
       </body>
     </html>
   );

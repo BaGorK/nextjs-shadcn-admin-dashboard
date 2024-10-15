@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import posts from '@/lib/data/data';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   title: z
@@ -50,6 +51,7 @@ type Props = {
 };
 
 function PostEditPage({ params }: Props) {
+  const { toast } = useToast();
   const post = posts.find((post) => post.id === params.id);
 
   const formMethods = useForm<z.infer<typeof formSchema>>({
@@ -60,7 +62,10 @@ function PostEditPage({ params }: Props) {
   const { handleSubmit, control } = formMethods;
 
   const onSubmitHandler = handleSubmit((data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    toast({
+      title: 'Post has been updated successfully',
+      description: `Updated by ${post?.author} on ${post?.date}`,
+    });
   });
 
   return (
