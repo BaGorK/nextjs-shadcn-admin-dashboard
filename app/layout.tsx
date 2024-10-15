@@ -28,7 +28,7 @@ export default function RootLayout({ children }: Props) {
         >
           <Navbar />
           <div className='flex'>
-            <div className='h-screen hidden md:block w-[300px]'>
+            <div className='min-h-screen hidden md:block w-[300px]'>
               <Sidebar />
             </div>
             <div className='p-5 w-full'>{children}</div>
