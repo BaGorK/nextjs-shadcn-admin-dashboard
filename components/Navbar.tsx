@@ -44,7 +44,7 @@ function Navbar() {
               <Link href='/'>Subscription</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href='/'>Logout</Link>
+              <Link href='/auth'>Logout</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
