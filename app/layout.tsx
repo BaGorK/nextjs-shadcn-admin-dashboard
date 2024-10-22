@@ -1,9 +1,7 @@
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Sidebar from '@/components/Sidebar';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { Toaster } from '@/components/ui/toaster';
+import './globals.css';
 import { Inter } from 'next/font/google';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
   title: 'Next.js shadcn-ui',
@@ -27,13 +25,7 @@ export default function RootLayout({ children }: Props) {
           disableTransitionOnChange
           storageKey='next-dashboard-theme'
         >
-          <Navbar />
-          <div className='flex'>
-            <div className='min-h-screen hidden md:block w-[300px]'>
-              <Sidebar />
-            </div>
-            <div className='p-5 w-full'>{children}</div>
-          </div>
+          {children}
         </ThemeProvider>
 
         <Toaster />

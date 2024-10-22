@@ -154,7 +154,7 @@ function PostEditPage({ params }: Props) {
               </FormItem>
             )}
           />
-          <Button className='w-full dark:bg-blue-600 dark:text-white mt-8'>
+          <Button className='w-full bg-blue-600 text-white mt-8'>
             Update Post
           </Button>
         </form>
